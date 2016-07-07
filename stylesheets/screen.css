@@ -1,0 +1,79 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*@import "compass/reset";*/
+/* line 7, ../sass/screen.scss */
+body {
+  position: relative;
+  background-color: #ccc;
+}
+
+/* line 20, ../sass/screen.scss */
+.leftbar {
+  position: absolute;
+  overflow: hidden;
+  top: 50px;
+  left: 50px;
+  width: 60px;
+}
+/* line 27, ../sass/screen.scss */
+.leftbar .line {
+  position: relative;
+  width: 60px;
+  height: 10px;
+  margin-bottom: 5px;
+  background-color: #000;
+}
+/* line 35, ../sass/screen.scss */
+.leftbar .line:nth-last-child(1) {
+  margin-bottom: 0;
+}
+
+@keyframes leftbarAnimation {
+  0% {
+    left: 0;
+  }
+  20% {
+    left: -30px;
+  }
+  50% {
+    left: -60px;
+  }
+  55% {
+    left: 60px;
+  }
+  75% {
+    left: 30px;
+  }
+  100% {
+    left: 0;
+  }
+}
+/* line 53, ../sass/screen.scss */
+.leftbar:hover .line:nth-child(1) {
+  animation: leftbarAnimation 300ms;
+}
+/* line 56, ../sass/screen.scss */
+.leftbar:hover .line:nth-child(2) {
+  animation: leftbarAnimation 300ms 100ms;
+}
+/* line 59, ../sass/screen.scss */
+.leftbar:hover .line:nth-last-child(1) {
+  animation: leftbarAnimation 300ms 200ms;
+}
+
+/* line 68, ../sass/screen.scss */
+.letter {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+/* line 72, ../sass/screen.scss */
+.letter span {
+  color: #000;
+  font-size: 30px;
+  line-height: 40px;
+  padding-left: 2px;
+  position: absolute;
+}

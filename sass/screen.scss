@@ -1,0 +1,80 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+/*@import "compass/reset";*/
+body {
+	position: relative;
+	background-color:#ccc;
+}
+
+
+
+//leftbar的样式
+
+$leftbarWidth : 60px;
+$leftbarHeight : 60px;
+
+//设置leftbar
+.leftbar {
+	position:absolute;
+	overflow:hidden;
+	top:50px; left:50px;
+	width:$leftbarWidth;
+	
+	//设置.line样式
+	.line{
+		position: relative;
+		width:$leftbarWidth;
+		height:10px;
+		margin-bottom: 5px;
+		background-color: #000;
+	}
+	//去掉最后一个line的下边距
+	.line:nth-last-child(1){
+		margin-bottom: 0;
+	}
+}
+
+
+
+//定义leftbar的动画，当鼠标hover时依次划开
+@keyframes leftbarAnimation {
+	0% {left:0;}
+	20%{left:-$leftbarWidth*0.5;}
+	50%{left:-$leftbarWidth;}
+	55%{left:$leftbarWidth;}
+	75%{left:$leftbarWidth*0.5;}
+	100%{left:0;}
+}
+.leftbar {
+	&:hover {
+		.line:nth-child(1) {
+			animation:leftbarAnimation 300ms;
+		}
+		.line:nth-child(2) {
+			animation:leftbarAnimation 300ms 100ms;
+		}
+		.line:nth-last-child(1) {
+			animation:leftbarAnimation 300ms 200ms;
+		}
+	}
+}
+
+//letter的样式
+$letterwidth : 80px;
+
+.letter {
+	position: absolute;
+	right:50px;
+	top:50px;
+	span {
+		color:#000;
+		font-size:30px;
+		line-height: 40px;
+		padding-left:2px;
+		position:absolute;
+	}
+}
+
