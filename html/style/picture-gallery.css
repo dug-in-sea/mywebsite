@@ -1,3 +1,11 @@
+@font-face{
+	font-family:'oppoRegular';
+	src:url('appo_paint-new.otf');
+}
+
+
+
+
 #navigation {
 	margin:50px 0;
 }
@@ -8,7 +16,7 @@
 	font-style: bold;
 	padding:0;
 	color:#000;
-	font-family: 'MS Sans Serif', Geneva, sans-serif;
+	font-family: oppoRegular,'MS Sans Serif', Geneva, sans-serif;
 }
 
 #example-navbar-collapse ul a{
@@ -34,3 +42,13 @@
 	font-size:20px;
 	color:red;
 }
+
+
+#main {
+	margin-top:195px;
+}
+
+#main .hover-opacity {
+	padding:0;
+}
+
