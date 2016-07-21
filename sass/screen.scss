@@ -4,10 +4,24 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 /*@import "compass/reset";*/
+//duginsea的字体设置
+@font-face{
+	font-family:'oppoRegular';
+	src:url('appo_paint-new.otf');
+}
+
+
+
+
 body {
 	position: relative;
-	background-color:#ccc;
+	background-color:#fff;
+	background-image: url(../images/background/mu.png);
+	background-repeat: repeat;
 }
+
+//颜色
+$qing : rgb(99,204,255);
 
 
 
@@ -18,9 +32,12 @@ $leftbarHeight : 60px;
 
 //设置leftbar
 .leftbar {
+	&:hover {
+		cursor:pointer;
+	}
 	position:absolute;
 	overflow:hidden;
-	top:50px; left:50px;
+	top:50px; left:0;
 	width:$leftbarWidth;
 	
 	//设置.line样式
@@ -29,7 +46,8 @@ $leftbarHeight : 60px;
 		width:$leftbarWidth;
 		height:10px;
 		margin-bottom: 5px;
-		background-color: #000;
+		background-color: $qing;
+		border-radius:5px;
 	}
 	//去掉最后一个line的下边距
 	.line:nth-last-child(1){
@@ -40,6 +58,7 @@ $leftbarHeight : 60px;
 
 
 //定义leftbar的动画，当鼠标hover时依次划开
+$leftbarSlideSpeed : 200ms;
 @keyframes leftbarAnimation {
 	0% {left:0;}
 	20%{left:-$leftbarWidth*0.5;}
@@ -51,30 +70,182 @@ $leftbarHeight : 60px;
 .leftbar {
 	&:hover {
 		.line:nth-child(1) {
-			animation:leftbarAnimation 300ms;
+			animation:leftbarAnimation $leftbarSlideSpeed ;
 		}
 		.line:nth-child(2) {
-			animation:leftbarAnimation 300ms 100ms;
+			animation:leftbarAnimation $leftbarSlideSpeed 100ms;
 		}
 		.line:nth-last-child(1) {
-			animation:leftbarAnimation 300ms 200ms;
+			animation:leftbarAnimation $leftbarSlideSpeed 200ms;
 		}
 	}
 }
+
+//xicon的样式
+@keyframes xiconanimation {
+	0%   {transform: rotate(0);}
+	50% {transform: rotate(90deg);}
+	100%{transform: rotate(180deg);}
+}
+
+
+.xicon {
+	width:60px;height:50px;
+	position:relative;
+	left:140px; top:45px;
+	display:none;
+	&:hover{
+		cursor:pointer;
+		animation:xiconanimation 200ms;
+
+	}
+
+	.line{
+		background-color:$qing;
+		width:60px;
+		height:10px;
+		position:absolute;
+		border-radius:5px;
+	}
+
+	.line:nth-child(1){
+		margin:20px 0;
+		transform:rotate(135deg);
+		
+	}	
+
+	.line:nth-child(2){
+		margin:20px 0;
+		transform: rotate(45deg);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //letter的样式
 $letterwidth : 80px;
 
 .letter {
 	position: absolute;
-	right:50px;
+	left:1000px;
 	top:50px;
+	white-space: nowrap;
 	span {
-		color:#000;
+		font-family: oppoRegular,'MS Sans Serif', Geneva, sans-serif;
+		color:#aaa;
 		font-size:30px;
 		line-height: 40px;
 		padding-left:2px;
-		position:absolute;
+		position:relative;
 	}
 }
 
+
+
+//设置图片展示栏目main的样式
+.main {
+	width:800px;
+	height:600px;
+	
+	position:absolute;
+	border-radius:5px;
+	left:250px;
+	top:150px;
+	.showpic {
+		position:relative;
+		float:left;
+		left:20px;top:10px;		
+		width:85%;
+		height:450px;
+		box-sizing:border-box;
+		border-radius:5px;
+		box-shadow: 2px 2px 2px #ccc;
+		background:url(../images/gallery-pic/1.jpg);
+		background-repeat: no-repeat;
+		background-size:100% 100%;
+	}		
+	
+	.cirbar {
+		position:relative;
+		float:right;
+		padding:30px 40px 10px;
+	}
+
+	.rightcir {
+		width:30px;
+		height:30px;
+		border-radius: 15px;
+		background-color: $qing;
+		margin-bottom:25px;
+		&:hover{
+			
+			opacity:0.8;
+			box-shadow: 2px 2px 1px 1px #ccc;
+			background-color: #99ccff;
+		}
+	}
+}
+
+
+//隐藏的侧边栏的样式
+.slidebar {
+	display:none;
+	opacity:0;
+	position:absolute;
+	top:100px;
+	left:0;
+	width:200px;
+	height:600px;
+	background-color: #99ccff;
+
+
+	div {
+		
+
+	}
+
+
+	a {
+		padding:20px 0 20px 0;
+		border-bottom: solid 1px #ccc;
+		text-align: center;
+		text-decoration: none;
+		font-size: 20px;
+		display:block;
+		color:#000;
+
+		&:hover {
+			background-color:rgb(0,176,240);
+			opacity:0.7;
+		
+			font-family: oppoRegular, sans-serif;
+			font-size:30px;
+			text-shadow:-2px -2px white,
+						 2px 2px #333;
+		}
+	}
+}
+
+
+
+#test {
+	width:200px;
+	height:50px;
+	position: fixed;
+	left:50px;
+	top:500px;
+	background-color: #fff;
+	border:solid 1px red;
+}

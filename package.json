@@ -9,6 +9,7 @@
   "author": "Duginsea",
   "license": "MIT",
   "devDependencies": {
+    "browser-sync": "^2.13.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cache": "^0.4.5",
@@ -21,6 +22,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^1.5.4",
+    "imagemin-pngquant": "^5.0.0",
     "jshint": "^2.9.2"
   }
 }

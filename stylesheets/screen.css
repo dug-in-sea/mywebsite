@@ -3,29 +3,40 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /*@import "compass/reset";*/
-/* line 7, ../sass/screen.scss */
+@font-face {
+  font-family: 'oppoRegular';
+  src: url("appo_paint-new.otf");
+}
+/* line 16, ../sass/screen.scss */
 body {
   position: relative;
-  background-color: #ccc;
+  background-color: #fff;
+  background-image: url(../images/background/mu.png);
+  background-repeat: repeat;
 }
 
-/* line 20, ../sass/screen.scss */
+/* line 34, ../sass/screen.scss */
 .leftbar {
   position: absolute;
   overflow: hidden;
   top: 50px;
-  left: 50px;
+  left: 0;
   width: 60px;
 }
-/* line 27, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
+.leftbar:hover {
+  cursor: pointer;
+}
+/* line 44, ../sass/screen.scss */
 .leftbar .line {
   position: relative;
   width: 60px;
   height: 10px;
   margin-bottom: 5px;
-  background-color: #000;
+  background-color: #63ccff;
+  border-radius: 5px;
 }
-/* line 35, ../sass/screen.scss */
+/* line 53, ../sass/screen.scss */
 .leftbar .line:nth-last-child(1) {
   margin-bottom: 0;
 }
@@ -50,30 +61,162 @@ body {
     left: 0;
   }
 }
-/* line 53, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 .leftbar:hover .line:nth-child(1) {
-  animation: leftbarAnimation 300ms;
+  animation: leftbarAnimation 200ms;
 }
-/* line 56, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 .leftbar:hover .line:nth-child(2) {
-  animation: leftbarAnimation 300ms 100ms;
+  animation: leftbarAnimation 200ms 100ms;
 }
-/* line 59, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .leftbar:hover .line:nth-last-child(1) {
-  animation: leftbarAnimation 300ms 200ms;
+  animation: leftbarAnimation 200ms 200ms;
 }
 
-/* line 68, ../sass/screen.scss */
+@keyframes xiconanimation {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+/* line 92, ../sass/screen.scss */
+.xicon {
+  width: 60px;
+  height: 50px;
+  position: relative;
+  left: 140px;
+  top: 45px;
+  display: none;
+}
+/* line 97, ../sass/screen.scss */
+.xicon:hover {
+  cursor: pointer;
+  animation: xiconanimation 200ms;
+}
+/* line 103, ../sass/screen.scss */
+.xicon .line {
+  background-color: #63ccff;
+  width: 60px;
+  height: 10px;
+  position: absolute;
+  border-radius: 5px;
+}
+/* line 111, ../sass/screen.scss */
+.xicon .line:nth-child(1) {
+  margin: 20px 0;
+  transform: rotate(135deg);
+}
+/* line 117, ../sass/screen.scss */
+.xicon .line:nth-child(2) {
+  margin: 20px 0;
+  transform: rotate(45deg);
+}
+
+/* line 140, ../sass/screen.scss */
 .letter {
   position: absolute;
-  right: 50px;
+  left: 1000px;
   top: 50px;
+  white-space: nowrap;
 }
-/* line 72, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 .letter span {
-  color: #000;
+  font-family: oppoRegular,'MS Sans Serif', Geneva, sans-serif;
+  color: #aaa;
   font-size: 30px;
   line-height: 40px;
   padding-left: 2px;
+  position: relative;
+}
+
+/* line 158, ../sass/screen.scss */
+.main {
+  width: 800px;
+  height: 600px;
   position: absolute;
+  border-radius: 5px;
+  left: 250px;
+  top: 150px;
+}
+/* line 166, ../sass/screen.scss */
+.main .showpic {
+  position: relative;
+  float: left;
+  left: 20px;
+  top: 10px;
+  width: 85%;
+  height: 450px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #ccc;
+  background: url(../images/gallery-pic/1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+/* line 180, ../sass/screen.scss */
+.main .cirbar {
+  position: relative;
+  float: right;
+  padding: 30px 40px 10px;
+}
+/* line 186, ../sass/screen.scss */
+.main .rightcir {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #63ccff;
+  margin-bottom: 25px;
+}
+/* line 192, ../sass/screen.scss */
+.main .rightcir:hover {
+  opacity: 0.8;
+  box-shadow: 2px 2px 1px 1px #ccc;
+  background-color: #99ccff;
+}
+
+/* line 203, ../sass/screen.scss */
+.slidebar {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 200px;
+  height: 600px;
+  background-color: #99ccff;
+}
+/* line 220, ../sass/screen.scss */
+.slidebar a {
+  padding: 20px 0 20px 0;
+  border-bottom: solid 1px #ccc;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  color: #000;
+}
+/* line 229, ../sass/screen.scss */
+.slidebar a:hover {
+  background-color: #00b0f0;
+  opacity: 0.7;
+  font-family: oppoRegular, sans-serif;
+  font-size: 30px;
+  text-shadow: -2px -2px white, 2px 2px #333;
+}
+
+/* line 243, ../sass/screen.scss */
+#test {
+  width: 200px;
+  height: 50px;
+  position: fixed;
+  left: 50px;
+  top: 500px;
+  background-color: #fff;
+  border: solid 1px red;
 }
