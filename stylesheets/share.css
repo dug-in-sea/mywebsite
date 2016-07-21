@@ -1,13 +1,13 @@
 /*
-Error: No files were found in the load path matching "share/*.png". Your current load paths are: /home/duginsea/frontend/mywebsite/images
-        on line 2 of /home/duginsea/frontend/mywebsite/sass/share.scss
+Error: No files were found in the load path matching "share/*.png". Your current load paths are: /home/duginsea/frontend/mynew/mywebsite/images
+        on line 2 of /home/duginsea/frontend/mynew/mywebsite/sass/share.scss
 
 1: @import "compass/utilities/sprites";      /*加载compass sprites模块*\/
 2: @import "share/*.png";                  /*导入share目录下所有png图片*\/
 3: @include all-share-sprites;                 /*输出所有的雪碧图css*\/
 
 Backtrace:
-/home/duginsea/frontend/mywebsite/sass/share.scss:2
+/home/duginsea/frontend/mynew/mywebsite/sass/share.scss:2
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:45:in `import'
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -51,4 +51,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: No files were found in the load path matching \"share/*.png\". Your current load paths are: /home/duginsea/frontend/mywebsite/images\A         on line 2 of /home/duginsea/frontend/mywebsite/sass/share.scss\A \A 1: @import \"compass/utilities/sprites\";      /*加载compass sprites模块*/\A 2: @import \"share/*.png\";                  /*导入share目录下所有png图片*/\A 3: @include all-share-sprites;                 /*输出所有的雪碧图css*/"; }
+  content: "Error: No files were found in the load path matching \"share/*.png\". Your current load paths are: /home/duginsea/frontend/mynew/mywebsite/images\A         on line 2 of /home/duginsea/frontend/mynew/mywebsite/sass/share.scss\A \A 1: @import \"compass/utilities/sprites\";      /*加载compass sprites模块*/\A 2: @import \"share/*.png\";                  /*导入share目录下所有png图片*/\A 3: @include all-share-sprites;                 /*输出所有的雪碧图css*/"; }
