@@ -3,21 +3,31 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dug's Main Page</title>
-	<link rel="stylesheet" href="stylesheets/screen.css" type="text/css">
+	<link rel="stylesheet" href="styledist/screen.css" type="text/css">
 	<script src="javascripts/jquery-2.2.3.js" type="text/javascript"></script>
 </head>
 <body>
+<!-- 左上角的三道杠图标 -->
 	<div class="leftbar">
 		<div class="line"></div>
 		<div class="line"></div>
 		<div class="line"></div>
 	</div>
-
+<!-- 左上角的交叉图标 -->
 	<div class="xicon hidden">
 		<div class="line"></div>
 		<div class="line"></div>
 	</div>
+<!-- 可出现和隐藏的侧边栏	 -->
+	<div class="slidebar hidden">
+		<div class="slideItem"><a href="">Home</a></div>
+		<div class="slideItem"><a href="">Daily</a></div>
+		<div class="slideItem"><a href="">Map</a></div>
+		<div class="slideItem"><a href="">Good</a></div>
+		<div class="slideItem"><a href="">Contact me</a></div>
+	</div>
 
+<!-- 右上角的duginsea字母logo -->
 	<div class="letter">
 		<span>D</span>
 		<span>U</span>
@@ -27,11 +37,11 @@
 		<span>S</span>
 		<span>E</span>
 		<span>A</span>
-
 	</div>
-	
+<!-- 中央的图片区 -->
 	<div class="main">
-	<div class="showpic"></div>
+	<div class="showpic"> </div>
+	<!-- 图片区侧边的小圆点 -->
 		<div class="cirbar">
 				<a href="#"><div class="rightcir"></div></a>
 				<a href="#"><div class="rightcir"></div></a>
@@ -42,17 +52,12 @@
 	</div>
 
 
-
-	<div class="slidebar hidden">
-		<div class="slideItem"><a href="">Home</a></div>
-		<div class="slideItem"><a href="">Daily</a></div>
-		<div class="slideItem"><a href="">Map</a></div>
-		<div class="slideItem"><a href="">Good</a></div>
-		<div class="slideItem"><a href="">Contact me</a></div>
-	</div>
-
+	
+	
+	<!-- 测试用的div -->
 	<!-- <div id="test"></div> -->
 	
+	<!-- 加载主页需要的js文件 -->
 	<script src="javascripts/index.js" type="text/javascript"></script>
 </body>
 </html>

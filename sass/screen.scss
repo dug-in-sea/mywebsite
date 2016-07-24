@@ -4,7 +4,7 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 /*@import "compass/reset";*/
-//duginsea的字体设置
+/*添加字体*/
 @font-face{
 	font-family:'oppoRegular';
 	src:url('appo_paint-new.otf');
@@ -21,17 +21,16 @@ body {
 	background-repeat: repeat;
 }
 
-//颜色
-$qing : rgb(255,255,255);
+/*颜色*/
+$colorDefault : rgb(255,255,255);
 
 
 
-//leftbar的样式
-
+/*leftbar的样式*/
 $leftbarWidth : 60px;
 $leftbarHeight : 60px;
 
-//设置leftbar
+/*设置leftbar*/
 .leftbar {
 	&:hover {
 		cursor:pointer;
@@ -41,16 +40,16 @@ $leftbarHeight : 60px;
 	top:50px; left:0;
 	width:$leftbarWidth;
 	
-	//设置.line样式
+	/*设置.line样式*/
 	.line{
 		position: relative;
 		width:$leftbarWidth;
 		height:10px;
 		margin-bottom: 5px;
-		background-color: $qing;
+		background-color: $colorDefault;
 		border-radius:5px;
 	}
-	//去掉最后一个line的下边距
+	/*去掉最后一个line的下边距*/
 	.line:nth-last-child(1){
 		margin-bottom: 0;
 	}
@@ -58,7 +57,7 @@ $leftbarHeight : 60px;
 
 
 
-//定义leftbar的动画，当鼠标hover时依次划开
+/*定义三道杠图标.leftbar的动画，当鼠标hover时依次划开*/
 $leftbarSlideSpeed : 200ms;
 @keyframes leftbarAnimation {
 	0% {left:0;}
@@ -72,21 +71,25 @@ $leftbarSlideSpeed : 200ms;
 	&:hover {
 		.line:nth-child(1) {
 			animation:leftbarAnimation $leftbarSlideSpeed ;
+			-webkit-animation:leftbarAnimation $leftbarSlideSpeed ;
+
 		}
 		.line:nth-child(2) {
 			animation:leftbarAnimation $leftbarSlideSpeed 100ms;
+			-webkit-animation:leftbarAnimation $leftbarSlideSpeed 100ms;
 		}
 		.line:nth-last-child(1) {
 			animation:leftbarAnimation $leftbarSlideSpeed 200ms;
+			-webkit-animation:leftbarAnimation $leftbarSlideSpeed 200ms;
 		}
 	}
 }
 
-//xicon的样式
+/*交叉图标xicon的样式和动画*/
 @keyframes xiconanimation {
-	0%   {transform: rotate(0);}
-	50% {transform: rotate(90deg);}
-	100%{transform: rotate(180deg);}
+	0%   {transform: rotate(0);-webkit-transform: rotate(0);}
+	50% {transform: rotate(90deg);-webkit-transform: rotate(90deg);}
+	100%{transform: rotate(180deg);-webkit-transform: rotate(180deg);}
 }
 
 
@@ -98,11 +101,12 @@ $leftbarSlideSpeed : 200ms;
 	&:hover{
 		cursor:pointer;
 		animation:xiconanimation 200ms;
+		-webkit-animation:xiconanimation 200ms;
 
 	}
 
 	.line{
-		background-color:$qing;
+		background-color:$colorDefault;
 		width:60px;
 		height:10px;
 		position:absolute;
@@ -124,18 +128,7 @@ $leftbarSlideSpeed : 200ms;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-//letter的样式
+/*字母logo的样式*/
 $letterwidth : 80px;
 
 .letter {
@@ -155,7 +148,7 @@ $letterwidth : 80px;
 
 
 
-//设置图片展示栏目main的样式
+/*图片展示栏目main的样式*/
 .main {
 	width:800px;
 	height:600px;
@@ -188,7 +181,7 @@ $letterwidth : 80px;
 		width:30px;
 		height:30px;
 		border-radius: 15px;
-		background-color: $qing;
+		background-color: $colorDefault;
 		margin-bottom:25px;
 		&:hover{
 			
@@ -200,7 +193,7 @@ $letterwidth : 80px;
 }
 
 
-//隐藏的侧边栏的样式
+/*可出现和隐藏的侧边栏的样式*/
 .slidebar {
 	display:none;
 	opacity:0;
@@ -240,7 +233,7 @@ $letterwidth : 80px;
 }
 
 
-
+/*测试div的样式*/
 #test {
 	width:200px;
 	height:50px;

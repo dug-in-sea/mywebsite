@@ -50,6 +50,26 @@ body {
 }
 
 /*定义三道杠图标.leftbar的动画，当鼠标hover时依次划开*/
+@-webkit-keyframes leftbarAnimation {
+  0% {
+    left: 0;
+  }
+  20% {
+    left: -30px;
+  }
+  50% {
+    left: -60px;
+  }
+  55% {
+    left: 60px;
+  }
+  75% {
+    left: 30px;
+  }
+  100% {
+    left: 0;
+  }
+}
 @keyframes leftbarAnimation {
   0% {
     left: 0;
@@ -87,6 +107,20 @@ body {
 }
 
 /*交叉图标xicon的样式和动画*/
+@-webkit-keyframes xiconanimation {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+  }
+  50% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+  }
+}
 @keyframes xiconanimation {
   0% {
     transform: rotate(0);
@@ -127,12 +161,14 @@ body {
 /* line 116, ../sass/screen.scss */
 .xicon .line:nth-child(1) {
   margin: 20px 0;
-  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 /* line 122, ../sass/screen.scss */
 .xicon .line:nth-child(2) {
   margin: 20px 0;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 /*字母logo的样式*/

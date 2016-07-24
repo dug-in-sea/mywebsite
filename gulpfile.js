@@ -1,6 +1,6 @@
-//  //引入gulp
-//  var gulp = require('gulp');
-// //引入各个模块
+//引入gulp
+var gulp = require('gulp');
+//引入各个模块
 // var sass = require('gulp-sass'),
 // 	autoprefixer = require('gulp-autoprefixer'),
 //     minifycss = require('gulp-minify-css'),
@@ -10,13 +10,13 @@
 //     rename = require('gulp-rename'),
 //     concat = require('gulp-concat'),
 //     notify = require('gulp-notify'),
-//      cache = require('gulp-cache'),
+//     cache = require('gulp-cache'),
 //     livereload = require('gulp-livereload');
 
 // // Styles任务
 // gulp.task('styles', function() {
 //     //编译sass
-//     return gulp.src('stylesheets/main.scss')
+//     return gulp.src('')
 //     .pipe(sass())
 //     //添加前缀
 //     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
@@ -84,19 +84,33 @@
 //     });
 // });
 
-var gulp = require('gulp'),
-	imagemin = require('gulp-imagemin'),
-	pngquant = require('imagemin-pngquant');
+// var gulp = require('gulp'),
+// 	imagemin = require('gulp-imagemin'),
+// 	pngquant = require('imagemin-pngquant');
 
-gulp.task('minImage',function(){
-	gulp.src('images/**/*.png')
-	.pipe(imagemin(
-		  {
-		  	optimizationLevel: 5,
-		  	progressive: true,
-		  	use:[pngquant({quality:'30-50'})]
-		  }
-		))
-	.pipe(gulp.dest('imagesDist'));
+// gulp.task('minImage',function(){
+// 	gulp.src('images/**/*.png')
+// 	.pipe(imagemin(
+// 		  {
+// 		  	optimizationLevel: 5,
+// 		  	progressive: true,
+// 		  	use:[pngquant({quality:'30-50'})]
+// 		  }
+// 		))
+// 	.pipe(gulp.dest('imagesDist'));
 
+// });
+
+var  autoprefixer = require('gulp-autoprefixer');
+ 
+gulp.task('cssauto', function () {
+    gulp.src('stylesheets/screen.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'Android >= 4.0'],
+            cascade: true, //是否美化属性值 默认：true 像这样：
+            //-webkit-transform: rotate(45deg);
+            //        transform: rotate(45deg);
+            remove:true //是否去掉不必要的前缀 默认：true 
+        }))
+        .pipe(gulp.dest('styledist'));
 });
